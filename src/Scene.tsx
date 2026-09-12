@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Canvas, useFrame, type RootState } from '@react-three/fiber'; // 1. Fixed: Explicit type-only import
+import { Canvas, useFrame, type RootState } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -67,7 +67,6 @@ function AllianceTable() {
       })}
 
       {/* 4. Referral Pathways - Tracing Lines Interconnecting Everyone */}
-      {/* Fixed: Replaced <line> with <lineSegments> to avoid JSX naming collision with browser HTML line tags */}
       {chairs.map((chairStart, i) => 
         chairs.map((chairEnd, j) => {
           if (i >= j) return null;
@@ -82,7 +81,7 @@ function AllianceTable() {
 
           return (
             <lineSegments key={`${i}-${j}`} geometry={lineGeometry}>
-              <lineBasicMaterial color="#38bdf8" transparent opacity={0.15} linewidth={1} />
+              <lineBasicMaterial color="#38bdf8" transparent opacity={0.15} />
             </lineSegments>
           );
         })
