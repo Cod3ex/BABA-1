@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Canvas, useFrame, RootState } from '@react-three/fiber';
+import { Canvas, useFrame, type RootState } from '@react-three/fiber'; // 1. Fixed: Explicit type-only import
 import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -33,7 +33,7 @@ function AllianceTable() {
       </mesh>
 
       {/* 2. Central Core Light - Representing Shared Business Knowledge */}
-      <mesh position={[0, 0, 0]}>
+      <mesh position={[0, 0.01, 0]}>
         <cylinderGeometry args={[0.4, 0.4, 0.05, 32]} />
         <meshStandardMaterial color="#00f0ff" emissive="#004c66" roughness={0.1} />
       </mesh>
@@ -67,9 +67,10 @@ function AllianceTable() {
       })}
 
       {/* 4. Referral Pathways - Tracing Lines Interconnecting Everyone */}
+      {/* Fixed: Replaced <line> with <lineSegments> to avoid JSX naming collision with browser HTML line tags */}
       {chairs.map((chairStart, i) => 
         chairs.map((chairEnd, j) => {
-          if (i >= j) return null; // Avoid drawing duplicate fallback line segments
+          if (i >= j) return null;
           const r = 1.8;
           const x1 = Math.cos(chairStart.angle) * r;
           const z1 = Math.sin(chairStart.angle) * r;
@@ -80,9 +81,9 @@ function AllianceTable() {
           const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
 
           return (
-            <line key={`${i}-${j}`} geometry={lineGeometry}>
+            <lineSegments key={`${i}-${j}`} geometry={lineGeometry}>
               <lineBasicMaterial color="#38bdf8" transparent opacity={0.15} linewidth={1} />
-            </line>
+            </lineSegments>
           );
         })
       )}
@@ -96,10 +97,10 @@ export default function Scene() {
       <Canvas camera={{ position: [0, 2.5, 4.5], fov: 45 }}>
         <ambientLight intensity={0.3} />
         {/* Crisp downward lights highlighting the professional table environment */}
-        <directionalLight position={[0, 10, 0]} intensity={1.5} color="#ffffff" />
-        <directionalLight position={[5, 3, 5]} intensity={1.0} color="#00f0ff" />
+        <directionalLight position={[5, 10, 5]} intensity={1.5} color="#ffffff" />
+        <directionalLight position={[-5, 5, 5]} intensity={1.0} color="#00f0ff" />
         <directionalLight position={[-5, 2, -5]} intensity={0.5} color="#6366f1" />
-        <pointLight position={[0, 1, 0]} intensity={0.8} color="#00f0ff" />
+        <pointLight position={[0, 2, 0]} intensity={0.8} color="#00f0ff" />
         
         <AllianceTable />
         
