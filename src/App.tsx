@@ -4,10 +4,10 @@ export default function App() {
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
       
-      {/* Premium 3D WebGL Background Layer */}
+      {/* 3D WebGL Background Layer */}
       <Scene />
 
-      {/* Global Interface Navigation Header */}
+      {/* Navigation Header bar */}
       <header style={{
         position: 'absolute',
         top: 0,
@@ -18,103 +18,121 @@ export default function App() {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        background: 'linear-gradient(to bottom, rgba(11, 12, 16, 0.8) 0%, rgba(11, 12, 16, 0) 100%)',
-        backdropFilter: 'blur(4px)'
+        background: 'linear-gradient(to bottom, rgba(11, 12, 16, 0.85) 0%, rgba(11, 12, 16, 0) 100%)',
+        backdropFilter: 'blur(6px)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#00f0ff', boxShadow: '0 0 10px #00f0ff' }}></div>
-          <span style={{ color: '#ffffff', fontWeight: 800, fontSize: '1.4rem', letterSpacing: '0.05em' }}>TXBIZ<span style={{ color: '#00f0ff' }}>ALLIANCE</span></span>
+          <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#00f0ff', boxShadow: '0 0 12px #00f0ff' }}></div>
+          <span style={{ color: '#ffffff', fontWeight: 800, fontSize: '1.3rem', letterSpacing: '0.05em' }}>
+            TXBIZ<span style={{ color: '#00f0ff' }}>ALLIANCE</span>
+          </span>
         </div>
         
-        <nav style={{ display: 'flex', gap: '32px' }}>
-          {['Network', 'Services', 'Intelligence', 'Contact'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 500, transition: 'color 0.2s' }}>
+        <nav style={{ display: 'flex', gap: '28px' }}>
+          {['Solutions', 'Infrastructure', 'Reputation', 'Automation'].map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>
               {item}
             </a>
           ))}
         </nav>
       </header>
 
-      {/* Main Structural Hero Layout Grid Section */}
+      {/* Hero Layout Split Grid */}
       <main style={{ 
         position: 'relative', 
         zIndex: 5, 
-        pointerEvents: 'none', // Directs click operations smoothly down to the interactive 3D rings matrix
+        pointerEvents: 'none', 
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: '1.2fr 0.8fr',
         alignItems: 'center',
         height: '100%',
         padding: '0 8%'
       }}>
         
-        {/* Left Column Area: Value Proposition Core Content */}
-        <div style={{ maxWidth: '560px', marginTop: '40px' }}>
+        {/* Left Side Content Area */}
+        <div style={{ maxWidth: '620px', marginTop: '40px' }}>
           <div style={{ 
             display: 'inline-flex', 
             alignItems: 'center', 
             gap: '8px', 
-            backgroundColor: 'rgba(56, 189, 248, 0.1)', 
-            border: '1px solid rgba(56, 189, 248, 0.2)', 
-            padding: '6px 16px', 
+            backgroundColor: 'rgba(0, 240, 255, 0.08)', 
+            border: '1px solid rgba(0, 240, 255, 0.2)', 
+            padding: '6px 14px', 
             borderRadius: '20px', 
-            color: '#38bdf8', 
-            fontSize: '0.85rem', 
+            color: '#00f0ff', 
+            fontSize: '0.8rem', 
             fontWeight: 600,
-            letterSpacing: '0.05em'
+            letterSpacing: '0.06em'
           }}>
-            TEXAS COMMERCE PLATFORM
+            TEXAS B2B INFRASTRUCTURE & SCALE
           </div>
 
           <h1 style={{ 
-            fontSize: '4rem', 
+            fontSize: '3.8rem', 
             fontWeight: 800, 
             color: '#ffffff', 
             lineHeight: 1.15,
-            letterSpacing: '-0.03em',
+            letterSpacing: '-0.02em',
             marginTop: '20px'
           }}>
-            Scale Your <br />
-            <span style={{ background: 'linear-gradient(to right, #ffffff, #38bdf8, #0dd3c5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Business Enterprise
+            Engineered for <br />
+            <span style={{ background: 'linear-gradient(to right, #ffffff, #38bdf8, #00f0ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Service-Based Startups
             </span>
           </h1>
           
-          <p style={{ fontSize: '1.15rem', color: '#9ca3af', marginTop: '24px', lineHeight: 1.65 }}>
-            Connect with Texas's premier alliance network. We integrate modern cloud architecture, automation layers, and regional business intelligence pipelines into a centralized portal layer.
+          <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginTop: '20px', lineHeight: 1.65 }}>
+            Deploy a complete operational core framework. We supply reliable business web hosting, high-tier domain provisioning, and secure professional email systems alongside smart local brand reputation management and automated client workflows.
           </p>
+
+          {/* Grid list of distinct service solutions */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '28px', color: '#e5e7eb' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
+              <span style={{ color: '#00f0ff' }}>✓</span> Web Hosting & Domains
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
+              <span style={{ color: '#00f0ff' }}>✓</span> Reputation Management
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
+              <span style={{ color: '#00f0ff' }}>✓</span> Professional Email
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
+              <span style={{ color: '#00f0ff' }}>✓</span> Workflow Automation
+            </div>
+          </div>
           
-          {/* Active Interactive Layout Controls */}
-          <div style={{ marginTop: '40px', display: 'flex', gap: '16px', pointerEvents: 'auto' }}>
+          {/* Main Action Buttons */}
+          <div style={{ marginTop: '36px', display: 'flex', gap: '16px', pointerEvents: 'auto' }}>
             <button style={{
               background: '#00f0ff',
               color: '#0b0c10',
               border: 'none',
-              padding: '16px 36px',
-              fontSize: '1rem',
+              padding: '14px 32px',
+              fontSize: '0.95rem',
               fontWeight: 700,
               borderRadius: '6px',
-              boxShadow: '0 8px 20px rgba(0, 240, 255, 0.25)',
+              boxShadow: '0 8px 24px rgba(0, 240, 255, 0.3)',
               cursor: 'pointer'
             }}>
-              Join The Alliance
+              Launch Platform
             </button>
             <button style={{
               background: 'transparent',
               color: '#ffffff',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              padding: '16px 32px',
-              fontSize: '1rem',
+              padding: '14px 28px',
+              fontSize: '0.95rem',
               fontWeight: 600,
               borderRadius: '6px',
               cursor: 'pointer',
-              backdropFilter: 'blur(10px)'
+              backdropFilter: 'blur(8px)'
             }}>
-              Explore Network
+              View Packages
             </button>
           </div>
         </div>
 
-        {/* Right Column Area: Left purposefully empty so the premium interactive 3D Nexus Rings shine through */}
+        {/* Right column frame is kept empty to preserve full viewing visibility of your 3D Scene rings */}
         <div></div>
 
       </main>
