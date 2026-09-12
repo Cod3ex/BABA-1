@@ -4,10 +4,10 @@ export default function App() {
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
       
-      {/* 3D WebGL Background Layer */}
+      {/* 3D Interactive Network Plexus Background */}
       <Scene />
 
-      {/* Navigation Header bar */}
+      {/* Global Group Header */}
       <header style={{
         position: 'absolute',
         top: 0,
@@ -19,7 +19,7 @@ export default function App() {
         justifyContent: 'space-between',
         alignItems: 'center',
         background: 'linear-gradient(to bottom, rgba(11, 12, 16, 0.85) 0%, rgba(11, 12, 16, 0) 100%)',
-        backdropFilter: 'blur(6px)'
+        backdropFilter: 'blur(4px)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#00f0ff', boxShadow: '0 0 12px #00f0ff' }}></div>
@@ -29,8 +29,8 @@ export default function App() {
         </div>
         
         <nav style={{ display: 'flex', gap: '28px' }}>
-          {['Solutions', 'Infrastructure', 'Reputation', 'Automation'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>
+          {['Our Chapters', 'Member Directory', 'Events', 'Apply'].map((item) => (
+            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }}>
               {item}
             </a>
           ))}
@@ -49,7 +49,7 @@ export default function App() {
         padding: '0 8%'
       }}>
         
-        {/* Left Side Content Area */}
+        {/* Left Side Content Area: Networking Group Focus */}
         <div style={{ maxWidth: '620px', marginTop: '40px' }}>
           <div style={{ 
             display: 'inline-flex', 
@@ -64,7 +64,7 @@ export default function App() {
             fontWeight: 600,
             letterSpacing: '0.06em'
           }}>
-            TEXAS B2B INFRASTRUCTURE & SCALE
+            TEXAS BUSINESS NETWORKING & REFERRAL GROUPS
           </div>
 
           <h1 style={{ 
@@ -75,33 +75,33 @@ export default function App() {
             letterSpacing: '-0.02em',
             marginTop: '20px'
           }}>
-            Engineered for <br />
+            Grow Your Business <br />
             <span style={{ background: 'linear-gradient(to right, #ffffff, #38bdf8, #00f0ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              Service-Based Startups
+              Through Local Referrals
             </span>
           </h1>
           
           <p style={{ fontSize: '1.1rem', color: '#9ca3af', marginTop: '20px', lineHeight: 1.65 }}>
-            Deploy a complete operational core framework. We supply reliable business web hosting, high-tier domain provisioning, and secure professional email systems alongside smart local brand reputation management and automated client workflows.
+            Welcome to Texas's premier alliance of trusted business professionals. We bring local business owners, entrepreneurs, and executives together to share high-quality referrals, lock out competitors, and build lasting professional relationships in our communities.
           </p>
 
-          {/* Grid list of distinct service solutions */}
+          {/* Group Pillars */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '28px', color: '#e5e7eb' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
-              <span style={{ color: '#00f0ff' }}>✓</span> Web Hosting & Domains
+              <span style={{ color: '#00f0ff' }}>🤝</span> Exclusive Industry Chairs
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
-              <span style={{ color: '#00f0ff' }}>✓</span> Reputation Management
+              <span style={{ color: '#00f0ff' }}>📊</span> Tracked Referral Pipelines
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
-              <span style={{ color: '#00f0ff' }}>✓</span> Professional Email
+              <span style={{ color: '#00f0ff' }}>📅</span> Weekly Chapter Meetings
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.95rem' }}>
-              <span style={{ color: '#00f0ff' }}>✓</span> Workflow Automation
+              <span style={{ color: '#00f0ff' }}>🚀</span> Shared Local Intelligence
             </div>
           </div>
           
-          {/* Main Action Buttons */}
+          {/* Action Buttons */}
           <div style={{ marginTop: '36px', display: 'flex', gap: '16px', pointerEvents: 'auto' }}>
             <button style={{
               background: '#00f0ff',
@@ -114,7 +114,7 @@ export default function App() {
               boxShadow: '0 8px 24px rgba(0, 240, 255, 0.3)',
               cursor: 'pointer'
             }}>
-              Launch Platform
+              Find a Chapter
             </button>
             <button style={{
               background: 'transparent',
@@ -127,12 +127,12 @@ export default function App() {
               cursor: 'pointer',
               backdropFilter: 'blur(8px)'
             }}>
-              View Packages
+              How It Works
             </button>
           </div>
         </div>
 
-        {/* Right column frame is kept empty to preserve full viewing visibility of your 3D Scene rings */}
+        {/* Right column remains open for the 3D core visual layout */}
         <div></div>
 
       </main>
