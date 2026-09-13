@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
-/* Base layout resets that VS Code understands perfectly */
+/* Base layout adjustments */
 body, html, #root {
   width: 100%;
   height: 100%;
-  background-color: #030407;
+  background-color: #030407; /* Luxurious deep obsidian */
   color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030407;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.2);
+  border-radius: 3px;
 }

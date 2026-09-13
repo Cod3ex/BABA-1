@@ -2,104 +2,111 @@ import Scene from './Scene';
 
 export default function App() {
   return (
-    /* Styled with absolute theme parameters directly inside the utility matrix */
-    <div className="w-screen h-screen bg-[#030407] flex items-center justify-center p-4 md:p-8 box-border select-none">
+    <div className="w-screen min-h-screen bg-[#050609] text-white flex flex-col justify-between p-6 md:p-12 font-sans overflow-x-hidden selection:bg-[#d4af37]/20 selection:text-[#d4af37]">
       
-      {/* Outer Executive Canvas Framing */}
-      <div className="w-full h-full relative border border-[rgba(212,175,55,0.15)] rounded-xl bg-[#06070a] overflow-hidden shadow-[0_50px_120px_rgba(0,0,0,0.85)] flex flex-col justify-between">
-        
-        {/* 3D Hardware Accelerated Nexus Environment */}
+      {/* Structural 3D Background Context */}
+      <div className="fixed inset-0 w-full h-full z-0 opacity-40 pointer-events-none">
         <Scene />
+      </div>
 
-        {/* 1. Global Membership Header Grid Bar */}
-        <header className="w-full px-8 md:px-16 pt-10 z-10 flex justify-between items-center relative pointer-events-auto">
-          <div className="flex items-center gap-3.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_15px_#00f0ff]" />
-            <span style={{ fontFamily: 'serif' }} className="font-extrabold text-lg tracking-[0.25em] uppercase text-white">
-              TXBIZ<span style={{ color: '#d4af37' }} className="font-light tracking-[0.1em]">ALLIANCE</span>
+      {/* 1. Rigid Navigation Header Panel */}
+      <header className="w-full max-w-7xl mx-auto z-10 flex justify-between items-center relative pointer-events-auto border-b border-white/[0.03] pb-8">
+        <div className="flex items-center gap-3">
+          <div className="w-1 h-1 rounded-full bg-[#d4af37] shadow-[0_0_15px_#d4af37]" />
+          <span style={{ fontFamily: 'serif' }} className="font-bold text-base tracking-[0.25em] uppercase text-white">
+            TXBIZ<span className="text-[#d4af37] font-light tracking-[0.15em]">ALLIANCE</span>
+          </span>
+        </div>
+        
+        <nav className="hidden md:flex items-center gap-10">
+          {['Chapters', 'Referral Logic', 'Charter'].map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase().replace(' ', '-')}`} 
+              className="text-[#52525b] hover:text-[#d4af37] transition-all duration-300 text-[10px] font-bold tracking-[0.2em] uppercase no-underline"
+            >
+              {item}
+            </a>
+          ))}
+          <span className="text-white/10 text-xs">|</span>
+          <button className="text-white hover:text-[#d4af37] text-[10px] font-bold tracking-[0.2em] uppercase transition-colors cursor-pointer">
+            Apply For Invitation
+          </button>
+        </nav>
+      </header>
+
+      {/* 2. Primary Editorial Asymmetric Main Frame */}
+      <main className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.10fr_0.90fr] items-center relative z-5 pointer-events-none flex-grow my-12">
+        
+        {/* Left Presentation Layout Grid */}
+        <div className="max-w-[640px] pointer-events-auto">
+          <div className="text-[#d4af37] text-[9px] font-bold tracking-[0.4em] uppercase mb-6 flex items-center gap-3">
+            <span className="w-6 h-[1px] bg-[#d4af37]/40"></span>
+            Private Business Alliance
+          </div>
+
+          <h1 style={{ fontFamily: 'serif' }} className="text-4xl md:text-5xl lg:text-[4rem] font-light leading-[1.1] text-white tracking-tight">
+            Vetted Referrals. <br />
+            <span className="italic text-[#d4af37] font-normal">
+              Shared Growth.
             </span>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-10">
-            {['Chapters', 'Referral Logic', 'Charter Standards'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`} 
-                className="text-zinc-500 hover:text-[#d4af37] transition-colors duration-300 text-[11px] font-bold tracking-[0.2em] uppercase no-underline"
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
-        </header>
+          </h1>
 
-        {/* 2. Main Asymmetrical Content Column Split */}
-        <div className="w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center relative z-5 pointer-events-none flex-grow">
-          
-          <div className="max-w-[580px] pt-12 lg:pt-0">
-            <div style={{ color: '#d4af37' }} className="text-[10px] font-bold tracking-[0.35em] uppercase mb-4">
-              Private Membership Guild
+          <p className="text-[#a1a1aa] text-sm md:text-base leading-relaxed tracking-wide mt-8 mb-12 max-w-[520px] font-sans font-light">
+            TX Biz Alliance restricts access to exactly one top-tier executive or partner per vertical marketplace chair within each regional chapter. We combine elite local business knowledge with high group accountability to drive warm, high-stakes referral distribution streams.
+          </p>
+
+          {/* Premium Cards Structural Grid Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[560px] w-full border-t border-white/[0.04] pt-8">
+            <div className="border-l border-[#d4af37]/30 pl-4">
+              <span className="text-[10px] text-zinc-600 tracking-widest font-mono">01 / CAP</span>
+              <h5 className="text-white text-xs font-bold tracking-wider uppercase mt-1">Single Seat Rule</h5>
+              <p className="text-zinc-500 text-xs mt-2 leading-relaxed font-light">
+                Complete protection from local marketplace competitor conflict within your chapter ring.
+              </p>
             </div>
-
-            <h1 style={{ fontFamily: 'serif' }} className="text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1] text-white tracking-tight">
-              Exclusive Industry Chairs. <br />
-              <span style={{ color: '#d4af37' }} className="italic font-normal">
-                Uncompromising Alliance.
-              </span>
-            </h1>
-
-            {/* Geometric luxury break separator marker */}
-            <div style={{ backgroundColor: '#d4af37' }} className="w-10 h-[1px] my-8 opacity-60" />
             
-            <p className="text-zinc-400 text-sm md:text-base leading-relaxed tracking-wide max-w-[500px] mb-9 font-sans">
-              TX Biz Alliance restricts access to exactly one top-tier executive or partner per vertical marketplace chair within each regional chapter. We combine elite local business knowledge with high group accountability to drive warm, high-stakes referral distribution streams.
-            </p>
-
-            {/* Premium Grid Cards Architecture */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[520px] w-full">
-              <div className="border-l-2 border-[rgba(212,175,55,0.4)] pl-4 py-1">
-                <h5 className="text-white text-xs font-bold tracking-wider uppercase">Single Seat Rule</h5>
-                <p className="text-zinc-500 text-xs mt-1.5 leading-relaxed">
-                  Complete protection from local marketplace competitor conflict within your chapter ring.
-                </p>
-              </div>
-              
-              <div className="border-l-2 border-cyan-400/40 pl-4 py-1">
-                <h5 className="text-white text-xs font-bold tracking-wider uppercase">Tracked Logistics</h5>
-                <p className="text-zinc-500 text-xs mt-1.5 leading-relaxed">
-                  A rigorous operational culture built around cross-functional accountability metrics.
-                </p>
-              </div>
-            </div>
-
-            {/* Call to Actions Controls Panel */}
-            <div className="mt-10 flex flex-wrap items-center gap-8 pointer-events-auto">
-              <button className="bg-white hover:bg-[#d4af37] text-[#030407] px-9 py-4 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.05)] cursor-pointer">
-                Request Briefing
-              </button>
-              
-              <a 
-                style={{ color: '#d4af37' }}
-                href="#charter" 
-                className="hover:text-white transition-colors duration-300 text-xs font-bold tracking-wider uppercase no-underline flex items-center gap-2"
-              >
-                Review Charter Standards →
-              </a>
+            <div className="border-l border-zinc-800 pl-4">
+              <span className="text-[10px] text-zinc-600 tracking-widest font-mono">02 / FLOW</span>
+              <h5 className="text-white text-xs font-bold tracking-wider uppercase mt-1">Tracked Logistics</h5>
+              <p className="text-zinc-500 text-xs mt-2 leading-relaxed font-light">
+                A rigorous operational culture built around cross-functional accountability metrics.
+              </p>
             </div>
           </div>
 
-          {/* Right column left completely clear to float context directly over the 3D core canvas window */}
-          <div className="hidden lg:block" />
-
+          {/* Action Call Controls Group */}
+          <div className="mt-12 flex items-center gap-8">
+            <button className="bg-white hover:bg-[#d4af37] text-[#050609] px-10 py-4 text-[10px] font-bold tracking-[0.25em] uppercase rounded-none transition-all duration-300 shadow-[0_4px_30px_rgba(255,255,255,0.02)] cursor-pointer">
+              Request Briefing
+            </button>
+            <a 
+              href="#charter" 
+              className="text-zinc-500 hover:text-white transition-colors text-[10px] font-bold tracking-[0.2em] uppercase no-underline"
+            >
+              Review Charter Standards →
+            </a>
+          </div>
         </div>
 
-        {/* 3. Bottom Institutional Geographic Ribbon */}
-        <footer className="w-full px-8 md:px-16 pb-10 border-t border-white/[0.02] flex flex-col md:flex-row justify-between gap-4 text-[10px] text-zinc-600 tracking-[0.2em] uppercase z-10 relative">
-          <div>Houston • Dallas • Austin • San Antonio</div>
-          <div>Capped Entry • Single Seat Governance</div>
-        </footer>
+        {/* Right Frame Window: Balancing Space */}
+        <div className="hidden lg:block w-full h-full" />
 
-      </div>
+      </main>
+
+      {/* 3. Bottom Geographic Data Tape Ribbon */}
+      <footer className="w-full max-w-7xl mx-auto border-t border-white/[0.03] pt-8 flex flex-col md:flex-row justify-between gap-4 text-[9px] text-[#3f3f46] tracking-[0.25em] uppercase z-10 relative">
+        <div className="flex gap-4">
+          <span>Houston</span>
+          <span className="text-zinc-800">•</span>
+          <span>Dallas</span>
+          <span className="text-zinc-800">•</span>
+          <span>Austin</span>
+          <span className="text-zinc-800">•</span>
+          <span>San Antonio</span>
+        </div>
+        <div>Capped Entry • Single Seat Governance</div>
+      </footer>
 
     </div>
   );
