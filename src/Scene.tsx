@@ -40,7 +40,7 @@ export default function Scene() {
   return (
     <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
       {/* Fixed: Coordinates explicitly filled out to eliminate the ts(1109) error */}
-      <Canvas camera={{ position:, fov: 40 }}>
+      <Canvas camera={{ position: [4, 3, 6], fov: 40 }}>
         <ambientLight intensity={0.15} />
         {/* High-intensity key spots to create razor-sharp metallic edge lines */}
         <directionalLight position={[5, 5, 5]} intensity={2.5} color="#ffffff" />

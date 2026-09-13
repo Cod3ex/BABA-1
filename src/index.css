@@ -1,12 +1,6 @@
 @import "tailwindcss";
 
-/* Luxury styling baseline overrides */
-@theme {
-  --font-serif: "Didot", "Bodoni MT", "Cinzel", "Playfair Display", serif;
-  --color-obsidian: #030407;
-  --color-gold: #d4af37;
-}
-
+/* Base layout resets that VS Code understands perfectly */
 body, html, #root {
   width: 100%;
   height: 100%;
