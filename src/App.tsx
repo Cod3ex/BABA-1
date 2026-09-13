@@ -2,191 +2,55 @@ import Scene from './Scene';
 
 export default function App() {
   return (
-    <div style={{ 
-      width: '100vw', 
-      height: '100vh', 
-      backgroundColor: '#020305', 
-      display: 'flex', 
-      alignItems: 'center', 
-      justifyContent: 'center',
-      padding: 'clamp(16px, 3vw, 40px)',
-      boxSizing: 'border-box'
-    }}>
-      
-      {/* Outer Executive Application Border Framework */}
-      <div style={{
-        width: '100%',
-        height: '100%',
-        position: 'relative',
-        border: '1px solid rgba(212, 175, 55, 0.12)', /* Fine gold frame */
-        backgroundColor: '#06070a',
-        overflow: 'hidden',
-        boxShadow: '0 40px 120px rgba(0,0,0,0.85)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
-      }}>
-        
-        {/* 3D Hardware Canvas Context */}
+    <div className="w-screen h-screen bg-obsidian flex items-center justify-center p-4 md:p-8 box-border select-none">
+      <div className="w-full h-full relative border border-[rgba(212,175,55,0.15)] rounded-xl bg-[#06070a] overflow-hidden shadow-[0_50px_120px_rgba(0,0,0,0.85)] flex flex-col justify-between">
         <Scene />
-
-        {/* 1. Global Navigation Bar Header Grid */}
-        <header style={{
-          width: '100%',
-          padding: '40px 60px 0 60px',
-          boxSizing: 'border-box',
-          zIndex: 10,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          pointerEvents: 'auto'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: '#00f0ff', boxShadow: '0 0 15px #00f0ff' }} />
-            <span style={{ fontWeight: 800, fontSize: '1.15rem', letterSpacing: '0.25em', color: '#ffffff' }}>
-              TXBIZ<span style={{ color: '#d4af37', fontWeight: 300 }}>ALLIANCE</span>
+        <header className="w-full px-8 md:px-16 pt-10 z-10 flex justify-between items-center relative pointer-events-auto">
+          <div className="flex items-center gap-3.5">
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_15px_#00f0ff]" />
+            <span className="font-extrabold text-lg tracking-[0.25em] font-serif uppercase text-white">
+              TXBIZ<span className="text-gold font-light tracking-[0.1em]">ALLIANCE</span>
             </span>
           </div>
-          
-          <nav style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
-            {['Chapters', 'Referral Logic', 'Charter'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} style={{ 
-                color: '#52525b', 
-                textDecoration: 'none', 
-                fontSize: '0.7rem', 
-                fontWeight: 600, 
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase'
-              }}>
-                {item}
-              </a>
+          <nav className="hidden md:flex items-center gap-10">
+            {['Chapters', 'Referral Logic', 'Charter Standards'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-zinc-500 hover:text-gold transition-colors duration-300 text-[11px] font-bold tracking-[0.2em] uppercase no-underline">{item}</a>
             ))}
           </nav>
         </header>
-
-        {/* 2. Primary Split Content Container Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(450px, 620px) 1fr',
-          alignItems: 'center',
-          padding: '0 60px',
-          position: 'relative',
-          zIndex: 5,
-          pointerEvents: 'none',
-          flexGrow: 1
-        }}>
-          
-          {/* Left Column: Asymmetrical Editorial Frame */}
-          <div style={{ paddingRight: '20px' }}>
-            <div style={{ 
-              color: '#d4af37', 
-              fontSize: '0.65rem', 
-              fontWeight: 600,
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
-              marginBottom: '20px'
-            }}>
-              Private Membership Guild
-            </div>
-
-            <h1 style={{ 
-              fontSize: 'clamp(2.5rem, 4vw, 3.8rem)', 
-              lineHeight: 1.15,
-              color: '#ffffff'
-            }}>
+        <div className="w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center relative z-5 pointer-events-none flex-grow">
+          <div className="max-w-[580px] pt-12 lg:pt-0">
+            <div className="text-gold text-[10px] font-bold tracking-[0.35em] uppercase mb-4">Private Membership Guild</div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light font-serif leading-[1.1] text-white tracking-tight">
               Exclusive Industry Chairs. <br />
-              <span style={{ fontStyle: 'italic', color: '#d4af37' }}>
-                Uncompromising Alliance.
-              </span>
+              <span className="italic text-gold font-normal font-serif">Uncompromising Alliance.</span>
             </h1>
-
-            {/* Fine Geometric Separation Line */}
-            <div style={{ width: '40px', height: '1px', backgroundColor: '#d4af37', margin: '30px 0' }} />
-            
-            <p style={{ 
-              fontSize: '0.95rem', 
-              color: '#a1a1aa', 
-              lineHeight: 1.75, 
-              letterSpacing: '0.01em',
-              maxWidth: '520px',
-              marginBottom: '36px'
-            }}>
+            <div className="w-10 h-[1px] bg-gold my-8 opacity-60" />
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed tracking-wide max-w-[500px] mb-9 font-sans">
               TX Biz Alliance restricts access to exactly one top-tier executive or partner per vertical marketplace chair within each regional chapter. We combine elite local business knowledge with high group accountability to drive warm, high-stakes referral distribution streams.
             </p>
-
-            {/* Content Cards Grid Architecture */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', width: '100%', maxWidth: '520px' }}>
-              <div style={{
-                borderLeft: '1px solid rgba(212, 175, 55, 0.25)',
-                paddingLeft: '16px'
-              }}>
-                <h5 style={{ color: '#ffffff', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Single Seat Rule</h5>
-                <p style={{ color: '#71717a', fontSize: '0.75rem', marginTop: '6px', lineHeight: 1.45 }}>Complete protection from local marketplace competitor conflict within your chapter ring.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[520px] w-full">
+              <div className="border-l-2 border-gold/40 pl-4 py-1">
+                <h5 className="text-white text-xs font-bold tracking-wider uppercase">Single Seat Rule</h5>
+                <p className="text-zinc-500 text-xs mt-1.5 leading-relaxed">Complete protection from local marketplace competitor conflict within your chapter ring.</p>
               </div>
-              <div style={{
-                borderLeft: '1px solid rgba(0, 240, 255, 0.25)',
-                paddingLeft: '16px'
-              }}>
-                <h5 style={{ color: '#ffffff', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Tracked Logistics</h5>
-                <p style={{ color: '#71717a', fontSize: '0.75rem', marginTop: '6px', lineHeight: 1.45 }}>A rigorous operational culture built around cross-functional accountability metrics.</p>
+              <div className="border-l-2 border-cyan-400/40 pl-4 py-1">
+                <h5 className="text-white text-xs font-bold tracking-wider uppercase">Tracked Logistics</h5>
+                <p className="text-zinc-500 text-xs mt-1.5 leading-relaxed">A rigorous operational culture built around cross-functional accountability metrics.</p>
               </div>
             </div>
-
-            {/* Button Layout Group */}
-            <div style={{ marginTop: '44px', display: 'flex', alignItems: 'center', gap: '32px', pointerEvents: 'auto' }}>
-              <button style={{
-                background: '#ffffff',
-                color: '#06070a',
-                border: 'none',
-                padding: '14px 36px',
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                borderRadius: '0px', /* Strict premium square corners */
-                cursor: 'pointer',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase'
-              }}>
-                Request Briefing
-              </button>
-              
-              <a href="#charter" style={{
-                color: '#d4af37',
-                fontSize: '0.7rem',
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textDecoration: 'none',
-                textTransform: 'uppercase'
-              }}>
-                Review Charter Standards →
-              </a>
+            <div className="mt-10 flex flex-wrap items-center gap-8 pointer-events-auto">
+              <button className="bg-white hover:bg-gold hover:text-obsidian text-obsidian px-9 py-4 text-xs font-bold tracking-[0.2em] uppercase rounded-none transition-all duration-300 cursor-pointer">Request Briefing</button>
+              <a href="#charter" className="text-gold hover:text-white transition-colors duration-300 text-xs font-bold tracking-wider uppercase no-underline flex items-center gap-2">Review Charter Standards →</a>
             </div>
           </div>
-
-          {/* Right Column: Kept clear to give the 3D scene room to balance the layout */}
-          <div />
-
+          <div className="hidden lg:block" />
         </div>
-
-        {/* 3. Institutional Bottom Data Strip */}
-        <footer style={{
-          width: '100%',
-          padding: '0 60px 40px 60px',
-          boxSizing: 'border-box',
-          borderTop: '1px solid rgba(255, 255, 255, 0.02)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          fontSize: '0.6rem',
-          color: '#3f3f46',
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
-          zIndex: 10
-        }}>
+        <footer className="w-full px-8 md:px-16 pb-10 border-t border-white/[0.02] flex flex-col md:flex-row justify-between gap-4 text-[10px] text-zinc-600 tracking-[0.2em] uppercase z-10 relative">
           <div>Houston • Dallas • Austin • San Antonio</div>
           <div>Capped Entry • Single Seat Governance</div>
         </footer>
-
       </div>
-
     </div>
   );
 }
